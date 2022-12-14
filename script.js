@@ -10,7 +10,7 @@ const WIN_COMBOS = [
   [0, 4, 8],
   [2, 4, 6],
 ];
-const cellElements = document.querySelectorAll("[cell-data]");
+const cellElements = document.querySelectorAll("[data-cell]");
 const board = document.getElementById("board");
 const winMessageElement = document.getElementById("winMessage");
 const restartButton = document.getElementById("restartBtn");
@@ -55,7 +55,7 @@ function endGame(draw) {
   } else {
     winMessageTextElement.innerHTML = `${oTurn ? "O's" : "X's"} Wins!`;
   }
-  winMessageElement.classList.add("show");
+  winMessageElement.classList.add(`show`);
 }
 
 function isDraw() {
