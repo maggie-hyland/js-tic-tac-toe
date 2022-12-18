@@ -14,9 +14,7 @@ const cellElements = document.querySelectorAll("[data-cell]");
 const board = document.getElementById("board");
 const winMessageElement = document.getElementById("winMessage");
 const restartButton = document.getElementById("restartBtn");
-const winMessageTextElement = document.querySelectorAll(
-  "[data-win-message-text]"
-);
+const winMessageTextElement = document.querySelector("[data-win-message-text]");
 let oTurn;
 
 startGame();
@@ -51,11 +49,11 @@ function handleClick(e) {
 
 function endGame(draw) {
   if (draw) {
-    winMessageTextElement.innerHTML = "Draw!";
+    winMessageTextElement.innerText = "Draw!";
   } else {
-    winMessageTextElement.innerHTML = `${oTurn ? "O's" : "X's"} Wins!`;
+    winMessageTextElement.innerText = `${oTurn ? "O" : "X"} Wins!`;
   }
-  winMessageElement.classList.add(`show`);
+  winMessageElement.classList.add("show");
 }
 
 function isDraw() {

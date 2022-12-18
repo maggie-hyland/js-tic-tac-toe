@@ -10,6 +10,7 @@
 }
 body {
   margin: 0;
+  font-family: "Jost", sans-serif;
 }
 .board {
   width: 100vw;
@@ -27,7 +28,7 @@ body {
   align-items: center;
   width: var(--cell-size);
   height: var(--cell-size);
-  border: 2px solid blueviolet;
+  border: 2px solid black;
   cursor: pointer;
 }
 .cell.x,
@@ -35,16 +36,20 @@ body {
   cursor: not-allowed;
 }
 .board.x .cell:not(.x):not(.o):hover::before,
-.board.x .cell:not(.x):not(.o):hover::after,
+.board.x .cell:not(.x):not(.o):hover::after {
+  background-color: #ffb4f0;
+}
 .board.o .cell:not(.x):not(.o):hover::before,
-.board.o .cell:not(.x):not(.o):hover::after,
-.cell.o::after {
-  background-color: lightgrey;
+.board.o .cell:not(.x):not(.o):hover::after {
+  background-color: #ffda53;
 }
 .cell.x::before,
-.cell.x::after,
+.cell.x::after {
+  background-color: #ff90e8;
+}
+.cell.o::after,
 .cell.o::before {
-  background-color: black;
+  background-color: #ffc900;
 }
 
 .cell.x::before,
@@ -107,19 +112,20 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
   justify-content: center;
   align-items: center;
-  color: rgb(182, 25, 25);
-  font-size: 5rem;
+  color: #23a094;
+  font-size: 90px;
   flex-direction: column;
 }
 .win-message button {
   font-size: 3rem;
   background-color: white;
-  border: 1px solid black;
+  border: 3px solid #23a094;
+  border-radius: 4px;
   padding: 5px 10px;
   cursor: pointer;
 }
 .win-message button:hover {
-  background-color: black;
+  background-color: #23a094;
   border-color: white;
   color: white;
 }
